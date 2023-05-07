@@ -1,0 +1,8 @@
+.infraction-sheet-container {
+    padding: 50px;
+    width: 100vw;
+}
+
+table {
+    overflow: auto;
+}

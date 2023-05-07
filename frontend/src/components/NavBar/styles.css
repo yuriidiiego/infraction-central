@@ -1,0 +1,48 @@
+header {
+  display: flex;
+  height: 90px;
+  width: 100vw;
+  align-items: center;
+  background-color: #1c1c1c;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 50px;
+}
+
+.infraction-nav-link {
+  display: flex;
+  align-items: center;
+}
+
+.infraction-logo {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+.infraction-title {
+  margin: 0;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #e5e5e5;
+  text-transform: uppercase;
+}
+
+.infraction-about-icon {
+  color: #e5e5e5;
+}
+
+.infraction-title:hover {
+  color: rgb(7, 217, 182);
+}
+
+.infraction-about-icon:hover {
+  color: rgb(7, 217, 182);
+}

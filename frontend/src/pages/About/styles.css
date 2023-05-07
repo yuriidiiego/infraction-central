@@ -1,0 +1,53 @@
+.about-container {
+  background-color: #1c1c1c;
+  height: calc(100% - 150px);
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-logo {
+  height: 300px;
+  width: 300px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  align-items: center;
+}
+
+.about-section p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  text-align: left;
+  color: #fff;
+}
+
+.about-section span {
+  font-weight: 800;
+  color: rgb(7, 217, 182);
+}
+
+.about-links {
+  margin-bottom: 20px;
+}
+
+.about-links i {
+  color: #fff;
+  font-size: 30px;
+  margin: 0 20px;
+}
+
+.about-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-links i:hover {
+    color: rgb(7, 217, 182);
+}
