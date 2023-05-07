@@ -1,4 +1,4 @@
-![infratracker](https://user-images.githubusercontent.com/83776617/236690334-5291b140-cf6c-44b0-9b37-f4ed67ae92d6.png)
+![infratracker](https://user-images.githubusercontent.com/83776617/236690899-1b82d4f9-5781-4687-95f8-5303ff49fa50.png)
 
 # InfraTracker :traffic_light:
 
@@ -7,7 +7,7 @@
 ## Requisitos 📋
 
 - `Maven` instalado para executar o comando mvn clean package -DskipTests
-- `Docker` instalado para executar o comando docker-compose up ou docker compose up -d ✅
+- `Docker` e `Docker Compose` instalado para executar o comando docker-compose up ou docker compose up -d
 
 ## Tecnologias utilizadas 🛠️
 
