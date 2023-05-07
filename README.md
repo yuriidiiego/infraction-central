@@ -1,11 +1,13 @@
+![infratracker](https://user-images.githubusercontent.com/83776617/236690334-5291b140-cf6c-44b0-9b37-f4ed67ae92d6.png)
+
 # InfraTracker :traffic_light:
 
- InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro. Estamos aqui para ajudar, então, se você tiver alguma dúvida ou encontrar qualquer problema, não hesite em entrar em contato conosco. :wave:
+ InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro.
 
 ## Requisitos 📋
 
-- Maven instalado para executar o comando mvn clean package -DskipTests ✅
-- Docker instalado para executar o comando docker-compose up ou docker-compose up -d ✅
+- `Maven` instalado para executar o comando mvn clean package -DskipTests
+- `Docker` instalado para executar o comando docker-compose up ou docker compose up -d ✅
 
 ## Tecnologias utilizadas 🛠️
 
