@@ -2,16 +2,23 @@
 
  InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro. Estamos aqui para ajudar, então, se você tiver alguma dúvida ou encontrar qualquer problema, não hesite em entrar em contato conosco. :wave:
 
-## Tecnologias utilizadas  🛠️
+## Requisitos 📋
+
+- Maven instalado para executar o comando mvn clean package -DskipTests ✅
+- Docker instalado para executar o comando docker-compose up ou docker-compose up -d ✅
+
+- mvn
+
+## Tecnologias utilizadas 🛠️
 
 ### Frontend
 
  O frontend do InfraTracker foi desenvolvido utilizando as seguintes tecnologias:
 
-<img src="https://img.shields.io/badge/-Vite-000?&logo=Vite" alt="Swagger" />
-<img src="https://img.shields.io/badge/-BootStrap-000?&logo=BootStrap" alt="Swagger" />
-<img src="https://img.shields.io/badge/-React-000?&logo=React" alt="Swagger" />
-<img src="https://img.shields.io/badge/-Axios-000?&logo=Axios" alt="Swagger" />
+<img src="https://img.shields.io/badge/-Vite-000?&logo=Vite" alt="Vite" />
+<img src="https://img.shields.io/badge/-BootStrap-000?&logo=BootStrap" alt="BootStrap" />
+<img src="https://img.shields.io/badge/-React-000?&logo=React" alt="React" />
+<img src="https://img.shields.io/badge/-Axios-000?&logo=Axios" alt="Axios" />
 
 ### Backend
 
