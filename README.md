@@ -7,8 +7,6 @@
 - Maven instalado para executar o comando mvn clean package -DskipTests ✅
 - Docker instalado para executar o comando docker-compose up ou docker-compose up -d ✅
 
-- mvn
-
 ## Tecnologias utilizadas 🛠️
 
 ### Frontend
