@@ -1,6 +1,6 @@
 ![infratracker](https://user-images.githubusercontent.com/83776617/236690899-1b82d4f9-5781-4687-95f8-5303ff49fa50.png)
 
-# InfraTracker :traffic_light:
+# InfraTracker 🚦
 
  InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro.
 
