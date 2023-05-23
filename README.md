@@ -1,34 +1,45 @@
-![infratracker](https://user-images.githubusercontent.com/83776617/236690899-1b82d4f9-5781-4687-95f8-5303ff49fa50.png)
-
 # InfraTracker 🚦
 
- InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro.
+InfraTracker é uma solução inovadora que oferece um gerenciamento eficiente e abrangente de registros de infrações de trânsito, em todo território brasileiro.
 
 ## Requisitos 📋
 
-- `Maven` instalado para executar o comando mvn clean package -DskipTests
-- `Docker` e `Docker Compose` instalado para executar o comando docker-compose up ou docker compose up -d
+Para executar o InfraTracker, você precisará ter as seguintes ferramentas instaladas:
+
+- [Docker](https://www.docker.com/) :whale:
+- [Docker Compose](https://docs.docker.com/compose/install/) :octopus:
+- [Maven](https://maven.apache.org/) 📦
 
 ## Tecnologias utilizadas 🛠️
 
 ### Frontend
 
  O frontend do InfraTracker foi desenvolvido utilizando as seguintes tecnologias:
-
-<img src="https://img.shields.io/badge/-Vite-000?&logo=Vite" alt="Vite" />
-<img src="https://img.shields.io/badge/-BootStrap-000?&logo=BootStrap" alt="BootStrap" />
-<img src="https://img.shields.io/badge/-React-000?&logo=React" alt="React" />
-<img src="https://img.shields.io/badge/-Axios-000?&logo=Axios" alt="Axios" />
+[![Frontend-Tools](https://skillicons.dev/icons?i=react,bootstrap,vite)](https://skillicons.dev)
 
 ### Backend
 
  O backend do InfraTracker foi desenvolvido utilizando as seguintes tecnologias:
+ [![Backend-Tools](https://skillicons.dev/icons?i=java,spring,postgresql)](https://skillicons.dev)
 
-<img src="https://img.shields.io/badge/-Java-000?&logo=Java8" alt="Swagger" />
-<img src="https://img.shields.io/badge/-SpringBoot-000?&logo=SpringBoot" alt="Swagger" />
-<img src="https://img.shields.io/badge/-Flyway-000?&logo=Flyway" alt="Swagger" />
-<img src="https://img.shields.io/badge/-Swagger-000?&logo=Swagger" alt="Swagger" />
-<img src="https://img.shields.io/badge/-PostgreSQL-000?&logo=PostgreSQL" alt="PostgreSQL" />
+ ![Swagger](https://img.shields.io/badge/-Swagger-000?&logo=Swagger)
+ O Swagger foi utilizado para documentar a API do InfraTracker. Para acessar a documentação quando a aplicação estiver rodando, utilize o endereço <http://localhost:8080//infraction-central/swagger-ui.html>
+
+ ![FlyWay](https://img.shields.io/badge/-FlyWay-000?&logo=FlyWay)
+ O Flyway é uma ferramenta que permite a versionagem e aplicação fácil e confiável de alterações no esquema do banco de dados.
+As migrações são armazenadas no diretório `backend/src/main/resources/db/migration`.
+
+## Endpoints do Backend 🚀
+
+A seguir, estão listados os endpoints do backend do InfraTracker:
+
+| Método | URL | Descrição |
+|--------|-----|-----------|
+| GET    | /records | Retorna todas as infraçoes. |
+| GET    | /records/{id} | Retorna uma infração. |
+| POST   | /records | Cria uma nova infração. |
+| PATCH  | /records/{id} | Atualiza uma infração existente. |
+| DELETE | /records/{id} | Deleta uma infração existente. |
 
 ### Docker
 
@@ -102,15 +113,16 @@ services:
 
 ## Build e Deploy 🏗️
 
- Para realizar o build e o deploy do projeto, basta executar o script abaixo, presente na pasta principal do projeto. O script realiza os seguintes passos:
+Para fazer o build e o deploy do InfraTracker, siga as instruções abaixo:
 
-```bash
-./build-and-deploy.sh
-```
+### Docker 🐳
 
- 1. Navega até a pasta do backend e executa o comando  `mvn clean package -DskipTests`  para gerar o arquivo JAR do backend.
- 2. Volta para a pasta principal do projeto e verifica se o comando  `docker-compose`  está disponível.
- 3. Executa o comando  `docker-compose build`  para gerar as imagens do Docker.
- 4. Executa o comando  `docker-compose up -d`  para iniciar os contêineres Docker do projeto.
+1. Clone o repositório do InfraTracker em sua máquina local.
+2. Navegue até o diretório backend na linha de comando.
+3. Execute o comando `mvn clean package -DskipTests` para gerar o JAR do projeto.
+4. Volte ao diretório principal da aplicação e execute o comando `docker-compose up --build` para construir e executar o ambiente do InfraTracker.
+5. Depois de executar o comando acima, você poderá acessar o InfraTracker através do endereço <http://localhost:5173>.
 
- Caso ocorra algum erro durante esses passos, o script exibirá a mensagem correspondente ao erro. Caso contrário, a mensagem "Script completed successfully!" será exibida. :white_check_mark:
+### 🚧 Em construção 🚧
+
+Esta documentação ainda está em construção. Algumas informações podem estar incompletas ou desatualizadas.Este projeto ainda está em desenvolvimento para fins de estudo, e esta documentação pode ser atualizada a qualquer momento.
