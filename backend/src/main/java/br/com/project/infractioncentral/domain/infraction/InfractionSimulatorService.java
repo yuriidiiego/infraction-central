@@ -1,8 +1,7 @@
-package br.com.grupodagostini.infractioncentral.domain.infraction;
+package br.com.project.infractioncentral.domain.infraction;
 
-import br.com.grupodagostini.infractioncentral.domain.infraction.payload.request.RecordRequest;
-import br.com.grupodagostini.infractioncentral.domain.infraction.payload.response.RecordResponse;
 import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,12 +10,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import br.com.project.infractioncentral.domain.infraction.payload.request.InfractionRecordRequest;
+import br.com.project.infractioncentral.domain.infraction.payload.response.InfractionRecordResponse;
+
 @Service
 public class InfractionSimulatorService {
-
-  private final Logger log = LoggerFactory.getLogger(
-    InfractionSimulatorService.class
-  );
 
   private static final String CHARACTERS =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -26,6 +24,9 @@ public class InfractionSimulatorService {
   private final RestTemplate restTemplate;
   private final Random random;
   private final String urlApi;
+  private final Logger log = LoggerFactory.getLogger(
+    InfractionSimulatorService.class
+  );
 
   public InfractionSimulatorService(
     RestTemplate restTemplate,
@@ -39,53 +40,59 @@ public class InfractionSimulatorService {
 
   @Scheduled(fixedRate = 3000)
   public void sendInfractionToAPI() {
-    RecordRequest recordRequest = createRecordRequest();
+    InfractionRecordRequest recordRequest = generateRecordRequest();
 
     try {
-      restTemplate.postForObject(urlApi, recordRequest, RecordResponse.class);
+      restTemplate.postForObject(
+        urlApi,
+        recordRequest,
+        InfractionRecordResponse.class
+      );
+      log.info("Infraction created: {}", recordRequest);
     } catch (RestClientException e) {
       log.error("Error sending infraction to API", e);
     }
   }
 
-  private RecordRequest createRecordRequest() {
-    int speed = generateSpeed();
+  InfractionRecordRequest generateRecordRequest() {
+    int speed = generateRandomSpeedBetween80And100();
     String licensePlate = generateLicensePlate();
     VehicleType vehicleType = generateVehicleType();
-
-    return new RecordRequest(speed, licensePlate, vehicleType);
+    return new InfractionRecordRequest(speed, licensePlate, vehicleType);
   }
 
-  private int generateSpeed() {
+  int generateRandomSpeedBetween80And100() {
     return random.nextInt(21) + 80;
   }
 
-  private String generateLicensePlate() {
+  String generateLicensePlate() {
     String plate = generateRandomString(PLATE_LENGTH, CHARACTERS);
-
-    if (!plate.matches(PLATE_PATTERN)) {
-      return generateLicensePlate();
-    }
-
-    return plate;
+    return isValidLicensePlate(plate) ? plate : generateLicensePlate();
   }
 
-  private VehicleType generateVehicleType() {
-    return VehicleType.values()[random.nextInt(VehicleType.values().length)];
+  boolean isValidLicensePlate(String licensePlate) {
+    return licensePlate.matches(PLATE_PATTERN);
+  }
+
+  VehicleType generateVehicleType() {
+    VehicleType[] vehicleTypes = VehicleType.values();
+    int randomIndex = random.nextInt(vehicleTypes.length);
+    return vehicleTypes[randomIndex];
   }
 
   private String generateRandomString(int length, String characters) {
     StringBuilder builder = new StringBuilder();
 
     for (int i = 0; i < length; i++) {
-      builder.append(getRandomChar(characters));
+      char randomChar = getRandomChar(characters);
+      builder.append(randomChar);
     }
 
     return builder.toString();
   }
 
   private char getRandomChar(String characters) {
-    int index = random.nextInt(characters.length());
-    return characters.charAt(index);
+    int randomIndex = random.nextInt(characters.length());
+    return characters.charAt(randomIndex);
   }
 }

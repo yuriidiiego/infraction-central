@@ -1,4 +1,4 @@
-package br.com.grupodagostini.infractioncentral.config;
+package br.com.project.infractioncentral.config;
 
 import java.util.Random;
 import org.springframework.context.annotation.Bean;

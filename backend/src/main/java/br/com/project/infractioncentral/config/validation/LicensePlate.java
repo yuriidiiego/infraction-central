@@ -1,4 +1,4 @@
-package br.com.grupodagostini.infractioncentral.config.validation;
+package br.com.project.infractioncentral.config.validation;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

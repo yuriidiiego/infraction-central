@@ -1,4 +1,4 @@
-package br.com.grupodagostini.infractioncentral.config.error;
+package br.com.project.infractioncentral.config.error;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
@@ -11,6 +11,8 @@ public class ErrorMessage {
   private LocalDateTime timestamp;
 
   private String message;
+
+  public ErrorMessage() {}
 
   public ErrorMessage(int statusCode, String message) {
     this.statusCode = statusCode;

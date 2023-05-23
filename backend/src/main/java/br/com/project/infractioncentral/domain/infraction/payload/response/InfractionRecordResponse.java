@@ -1,10 +1,12 @@
-package br.com.grupodagostini.infractioncentral.domain.infraction.payload.response;
+package br.com.project.infractioncentral.domain.infraction.payload.response;
 
-import br.com.grupodagostini.infractioncentral.domain.infraction.VehicleType;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 
-public class RecordResponse {
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import br.com.project.infractioncentral.domain.infraction.VehicleType;
+
+public class InfractionRecordResponse {
 
   private Long id;
 
@@ -16,6 +18,14 @@ public class RecordResponse {
   private String licensePlate;
 
   private VehicleType vehicleType;
+
+  public InfractionRecordResponse() {}
+
+  public InfractionRecordResponse(int speed, String licensePlate, VehicleType car) {
+    this.speed = speed;
+    this.licensePlate = licensePlate;
+    this.vehicleType = car;
+  }
 
   public Long getId() {
     return id;

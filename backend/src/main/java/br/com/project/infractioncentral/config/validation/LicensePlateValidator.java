@@ -1,4 +1,4 @@
-package br.com.grupodagostini.infractioncentral.config.validation;
+package br.com.project.infractioncentral.config.validation;
 
 import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;

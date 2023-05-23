@@ -1,4 +1,4 @@
-package br.com.grupodagostini.infractioncentral.domain.infraction;
+package br.com.project.infractioncentral.domain.infraction;
 
 import java.time.LocalDateTime;
 import javax.persistence.Column;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "records")
-public class Record {
+public class InfractionRecord {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,12 +31,25 @@ public class Record {
   @Column(name = "vehicle_type")
   private VehicleType vehicleType;
 
-  public Record() {}
+  public InfractionRecord() {}
 
-  public Record(int speed, String licensePlate, VehicleType vehicleType) {
+  public InfractionRecord(int speed, String licensePlate, VehicleType vehicleType) {
     this.speed = speed;
     this.licensePlate = licensePlate;
     this.vehicleType = vehicleType;
+    this.createdAt = LocalDateTime.now();
+  }
+
+  public InfractionRecord(
+    int speed,
+    String licensePlate,
+    VehicleType vehicleType,
+    LocalDateTime now
+  ) {
+    this.speed = speed;
+    this.licensePlate = licensePlate;
+    this.vehicleType = vehicleType;
+    this.createdAt = now;
   }
 
   public Long getId() {
@@ -77,24 +90,5 @@ public class Record {
 
   public void setVehicleType(VehicleType vehicleType) {
     this.vehicleType = vehicleType;
-  }
-
-  @Override
-  public String toString() {
-    return (
-      "Record{" +
-      "id=" +
-      id +
-      ", createdAt=" +
-      createdAt +
-      ", speed=" +
-      speed +
-      ", licensePlate='" +
-      licensePlate +
-      '\'' +
-      ", vehicleType=" +
-      vehicleType +
-      '}'
-    );
   }
 }
