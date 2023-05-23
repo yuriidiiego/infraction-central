@@ -15,11 +15,13 @@ Para executar o InfraTracker, você precisará ter as seguintes ferramentas inst
 ### Frontend
 
  O frontend do InfraTracker foi desenvolvido utilizando as seguintes tecnologias:
+ 
 [![Frontend-Tools](https://skillicons.dev/icons?i=react,bootstrap,vite)](https://skillicons.dev)
 
 ### Backend
 
  O backend do InfraTracker foi desenvolvido utilizando as seguintes tecnologias:
+ 
  [![Backend-Tools](https://skillicons.dev/icons?i=java,spring,postgresql)](https://skillicons.dev)
 
  ![Swagger](https://img.shields.io/badge/-Swagger-000?&logo=Swagger)
